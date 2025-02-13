@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "skLabs.AppHost", "skLabs.AppHost\skLabs.AppHost.csproj", "{681FAA53-7A5E-4B50-AB0E-220751C69AAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "skLabs.ServiceDefaults", "skLabs.ServiceDefaults\skLabs.ServiceDefaults.csproj", "{E962D0D4-1503-470F-A18E-231FE3143E57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "skLabs.ApiService", "skLabs.ApiService\skLabs.ApiService.csproj", "{260F5377-D3F6-48AE-8C88-013ACC58A07E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "skLabs.Web", "skLabs.Web\skLabs.Web.csproj", "{0230ADFB-BAF3-4527-A17F-B483E9FF481A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugins", "Plugins\Plugins.csproj", "{20FE0F71-BEBC-DA11-601B-F6D834C8EA50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginsTests", "PluginsTests\PluginsTests.csproj", "{37ECD5E2-99CD-DF9C-0B2B-52C409CC1567}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFunctions", "AzureFunctions\AzureFunctions.csproj", "{41515E79-0299-E1E8-7585-F22D4D5ED6B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{681FAA53-7A5E-4B50-AB0E-220751C69AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681FAA53-7A5E-4B50-AB0E-220751C69AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681FAA53-7A5E-4B50-AB0E-220751C69AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681FAA53-7A5E-4B50-AB0E-220751C69AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E962D0D4-1503-470F-A18E-231FE3143E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E962D0D4-1503-470F-A18E-231FE3143E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E962D0D4-1503-470F-A18E-231FE3143E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E962D0D4-1503-470F-A18E-231FE3143E57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{260F5377-D3F6-48AE-8C88-013ACC58A07E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{260F5377-D3F6-48AE-8C88-013ACC58A07E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{260F5377-D3F6-48AE-8C88-013ACC58A07E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{260F5377-D3F6-48AE-8C88-013ACC58A07E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0230ADFB-BAF3-4527-A17F-B483E9FF481A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0230ADFB-BAF3-4527-A17F-B483E9FF481A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0230ADFB-BAF3-4527-A17F-B483E9FF481A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0230ADFB-BAF3-4527-A17F-B483E9FF481A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20FE0F71-BEBC-DA11-601B-F6D834C8EA50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20FE0F71-BEBC-DA11-601B-F6D834C8EA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20FE0F71-BEBC-DA11-601B-F6D834C8EA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20FE0F71-BEBC-DA11-601B-F6D834C8EA50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37ECD5E2-99CD-DF9C-0B2B-52C409CC1567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37ECD5E2-99CD-DF9C-0B2B-52C409CC1567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37ECD5E2-99CD-DF9C-0B2B-52C409CC1567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37ECD5E2-99CD-DF9C-0B2B-52C409CC1567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41515E79-0299-E1E8-7585-F22D4D5ED6B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41515E79-0299-E1E8-7585-F22D4D5ED6B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41515E79-0299-E1E8-7585-F22D4D5ED6B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41515E79-0299-E1E8-7585-F22D4D5ED6B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E7981A0-D939-4765-9A98-592326D9912B}
+	EndGlobalSection
+EndGlobal
