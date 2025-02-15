@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'core/theme/app_theme.dart';
 import 'pages/ingredient_buddy_page.dart';
-import 'pages/RepoCrawl.dart';
+import 'pages/repo_crawl_page.dart';
 import 'pages/placeholder_page_two.dart';
 import 'widgets/side_navigation_bar.dart';
+import 'core/services/service_locator.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  ServiceLocator().initialize();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,10 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         title: 'IngredientBuddy',
-        theme: ThemeData(
-          colorScheme: ColorScheme.dark(),
-          useMaterial3: true,
-        ),
+        theme: AppTheme.darkTheme,
         home: const MainLayout(),
       );
 }
@@ -25,7 +28,7 @@ class MainLayout extends StatefulWidget {
 
   static const List<Widget> _pages = [
     IngredientBuddyPage(),
-    RepoCrawl(),
+    RepoCrawlPage(),
     PlaceholderPageTwo(),
   ];
 
@@ -38,7 +41,6 @@ class _MainLayoutState extends State<MainLayout> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Colors.black,
         body: Row(
           children: [
             SideNavigationBar(
@@ -46,18 +48,7 @@ class _MainLayoutState extends State<MainLayout> {
               onIndexChanged: (index) => setState(() => _selectedIndex = index),
             ),
             Expanded(
-              child: ColoredBox(
-                color: const Color(0xFF121212),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Center(
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 1200),
-                      child: MainLayout._pages[_selectedIndex],
-                    ),
-                  ),
-                ),
-              ),
+              child: MainLayout._pages[_selectedIndex],
             ),
           ],
         ),

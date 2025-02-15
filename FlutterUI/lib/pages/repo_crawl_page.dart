@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../core/theme/app_theme.dart';
 
-class PlaceholderPageTwo extends StatelessWidget {
-  const PlaceholderPageTwo({super.key});
+class RepoCrawlPage extends StatelessWidget {
+  const RepoCrawlPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class PlaceholderPageTwo extends StatelessWidget {
       padding: AppSpacing.pagePadding,
       child: Center(
         child: Text(
-          'Page Three',
+          'Repository Crawler',
           style: theme.textTheme.displayMedium,
         ),
       ),

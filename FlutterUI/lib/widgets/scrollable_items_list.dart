@@ -1,51 +1,36 @@
 import 'package:flutter/material.dart';
+import '../core/theme/app_theme.dart';
 
 class ScrollableItemsList extends StatelessWidget {
   final int itemCount;
   final double width;
   final double height;
-  final double itemHeight;
 
   const ScrollableItemsList({
     super.key,
     this.itemCount = 10,
     this.width = 360,
     this.height = 320,
-    this.itemHeight = 64,
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
+  Widget build(BuildContext context) => Container(
         width: width,
         height: height,
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.white, width: 2),
-          borderRadius: BorderRadius.circular(12),
-        ),
+        decoration: AppBorders.uploadContainer,
         child: ListView.separated(
           padding: EdgeInsets.zero,
           itemCount: itemCount,
-          separatorBuilder: (context, index) => const Divider(
-            height: 1,
-            thickness: 1,
-            color: Colors.white,
+          separatorBuilder: (_, __) => Divider(
+            height: AppBorders.defaultWidth,
+            thickness: AppBorders.defaultWidth,
+            color: AppColors.borderColor,
           ),
-          itemBuilder: (context, index) {
-            return SizedBox(
-              height: itemHeight,
-              child: const Center(
-                child: Icon(
-                  Icons.article_outlined,
-                  color: Colors.white,
-                  size: 32,
-                ),
-              ),
-            );
-          },
+          itemBuilder: (_, __) => const SizedBox(
+            height: 64,
+            child: Icon(Icons.article_outlined,
+                color: AppColors.textLight, size: 32),
+          ),
         ),
-      ),
-    );
-  }
-} 
+      );
+}
