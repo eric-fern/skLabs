@@ -8,6 +8,9 @@ namespace AzureFunctions
     /*this azure function will receive an http request 
      *containing all of our form data filled in by a teacher
      *It will call and orchestrate SK plugins to generate a lesson plan, and various 
+     *
+     *Our APIM can pass on a request to this Azure function by sending request to:
+     *https://azurefunctions20250215174351.azurewebsites.net/api/teacherformdatacatcher
     */
     public class TeacherFormDataCatcher
     {
@@ -18,8 +21,8 @@ namespace AzureFunctions
             _logger = logger;
         }
 
-        [Function("Function")]
-        public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req)
+        [Function("TeacherFormDataCatcher")]
+        public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "post", Route = "teacherformdatacatcher")] HttpRequest req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
             return new OkObjectResult("Welcome to Azure Functions!");
