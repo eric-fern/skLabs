@@ -1,0 +1,185 @@
+﻿@page "/wizard"
+@inject NavigationManager NavigationManager
+@implements IDisposable //garbage collection
+
+<div class="text-center mb-8 p-4 rounded-lg bg-primary-100">
+    <h1 class="text-2xl font-bold text-primary-800">Quick Questionnaire</h1>
+    <p class="text-primary-600">Fill out all fields to continue</p>
+</div>
+
+<!-- Debug Panel -->
+<div style="background-color: #f0f0f0; padding: 10px; margin: 10px;">
+    <h4>Debug Info (Current State):</h4>
+    <p>Text 1: @text1</p>
+    <p>Text 2: @text2</p>
+    <p>Text 3: @text3</p>
+    <p>Is Form Complete: @IsComplete</p>
+</div>
+
+<div class="space-y-8">
+    <div class="wizard-card">
+        <h3 class="wizard-heading">What's your name?</h3>
+        <div class="mt-2">
+            <input type="text" @bind-value="text1" @bind-value:event="oninput" class="form-input w-full" />
+        </div>
+    </div>
+
+    <div class="wizard-card">
+        <h3 class="wizard-heading">What's your favorite color?</h3>
+        <div class="mt-2">
+            <input type="text" @bind-value="text2" @bind-value:event="oninput" class="form-input w-full" />
+        </div>
+    </div>
+
+    <div class="wizard-card">
+        <h3 class="wizard-heading">What's your favorite hobby?</h3>
+        <div class="mt-2">
+            <input type="text" @bind-value="text3" @bind-value:event="oninput" class="form-input w-full" />
+        </div>
+    </div>
+</div>
+
+<div class="flex justify-between mt-6">
+    <button @onclick="HandleNext"
+            class="btn @(IsComplete ? "btn-primary" : "btn-primary-disabled")"
+            disabled="@(!IsComplete)">
+        Next
+    </button>
+</div>
+
+@code {
+    private string text1 = "";
+    private string text2 = "";
+    private string text3 = "";
+
+    private bool IsComplete =>
+        !string.IsNullOrWhiteSpace(text1) &&
+        !string.IsNullOrWhiteSpace(text2) &&
+        !string.IsNullOrWhiteSpace(text3);
+
+    private void HandleNext()
+    {
+        if (IsComplete)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+    }
+
+    public void Dispose()
+    {
+    }
+}
+
+<style>
+    .wizard-card {
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid #e5e7eb;
+        background-color: white;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        margin-bottom: 1rem;
+    }
+
+    .wizard-heading {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #1f2937;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .btn-primary {
+        background-color: #2563eb;
+        color: white;
+        cursor: pointer;
+    }
+
+    .btn-primary-disabled {
+        background-color: #93c5fd;
+        color: white;
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    .btn-primary:hover {
+        background-color: #1d4ed8;
+        transform: translateY(-1px);
+    }
+
+    .form-input {
+        padding: 0.75rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 0.5rem;
+        width: 100%;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+    }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+    .space-y-8 > * + * {
+        margin-top: 2rem;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .justify-between {
+        justify-content: space-between;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .mb-8 {
+        margin-bottom: 2rem;
+    }
+
+    .mt-6 {
+        margin-top: 1.5rem;
+    }
+
+    .mt-2 {
+        margin-top: 0.5rem;
+    }
+
+    .p-4 {
+        padding: 1rem;
+    }
+
+    .rounded-lg {
+        border-radius: 0.5rem;
+    }
+
+    .bg-primary-100 {
+        background-color: #dbeafe;
+    }
+
+    .text-primary-800 {
+        color: #1e40af;
+    }
+
+    .text-primary-600 {
+        color: #2563eb;
+    }
+
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+
+    .font-bold {
+        font-weight: 700;
+    }
+</style>
