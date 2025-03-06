@@ -15,14 +15,14 @@ public class CodeCommenterTests
     [TestInitialize]
     public void Setup()
     {
-        // Your existing setup code remains the same
+        
         var configuration = WebApplication.CreateBuilder().Configuration;
 
         var deploymentName = configuration["TextGen:ModelDeploymentName"];
         var endpoint = configuration["TextGen:Endpoint"];
         var apiKey = configuration["TextGen:ApiKey"];
 
-        // Verification remains the same
+        // Verification 
         if (string.IsNullOrWhiteSpace(deploymentName))
             throw new InvalidOperationException("Model Deployment Name not found in configuration.");
 
@@ -45,7 +45,6 @@ public class CodeCommenterTests
     [TestMethod]
     public async Task CommentCode_ValidCSharpCode_ReturnsWithComments()
     {
-        // Your existing test code with updated method name
         string codeToComment = @"
         public class WeatherForecastCache
         {

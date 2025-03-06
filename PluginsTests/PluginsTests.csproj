@@ -13,6 +13,7 @@
       For more information, visit https://learn.microsoft.com/dotnet/core/testing/unit-testing-platform-integration-dotnet-test#show-failure-per-test
       -->
     <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
+    <UserSecretsId>f4be46a0-6620-4159-adb2-8b4e1d3471a1</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
