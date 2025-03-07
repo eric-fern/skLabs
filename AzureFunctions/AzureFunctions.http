@@ -1,0 +1,5 @@
+﻿@AzureFunctions_HostAddress = http://localhost:7201
+
+POST {{AzureFunctions_HostAddress}}/api/teacherformdatacatcher
+
+###

@@ -1,0 +1,5 @@
+﻿@skLabs.ApiService_HostAddress = https://localhost:7392
+
+GET {{skLabs.ApiService_HostAddress}}/weatherforecast
+
+###

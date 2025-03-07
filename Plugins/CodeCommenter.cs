@@ -20,7 +20,7 @@ public class CodeCommenter
         if (string.IsNullOrEmpty(code))
             return "No code provided for analysis.";
 
-        // Our prompt template guides the AI in how to comment on the code
+        //prompt template tells the AI how to comment the code
         const string promptTemplate = @"
                                             Comment and analyze the following code. Provide:
                                             1. The two most important patterns or concepts used in this code, explaining why they're significant (in all caps surrounded by asterisks)
@@ -43,10 +43,10 @@ public class CodeCommenter
 
                                             [Original code with line-by-line comments]";
 
-        // Create our semantic function using the kernel's CreateFunctionFromPrompt method
+        // create semantic function using the kernel's CreateFunctionFromPrompt method
         var analysisFunction = _kernel.CreateFunctionFromPrompt(promptTemplate);
 
-        // Execute the comments with our code as input
+        // execute the comments with our code as input
         var context = new KernelArguments
         {
             ["input"] = code
